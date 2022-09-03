@@ -1,0 +1,26 @@
+.logo {
+	width: 250px;
+}.volunteer {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+}.volunteerForm {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	width: 570px;
+	margin-top: 27px;
+	border: 1px solid #ABABAB;
+	padding: 3rem;
+	border-radius: 6px;
+}
+.volunteerForm h2 {
+	font-size: 24px;
+	font-weight: 700;
+}.volunteerForm input {
+	border: none;
+	border-bottom: 1px solid #C5C5C5;
+	padding: 10px 3px;
+	color: #000;
+}

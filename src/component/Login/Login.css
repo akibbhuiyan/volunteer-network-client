@@ -1,0 +1,32 @@
+.login-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 3rem;
+	background-color: #F8FAFC;
+}.login {
+	padding: 8rem 0;
+	width: 570px;
+	border: 1px solid #c7c7c7;
+	background-color: #fff;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}.login h3 {
+	font-size: 24px;
+	font-weight: 700;
+	padding: 1rem 0;
+}.google-login {
+	padding: 1rem 1rem;
+	border: 1px solid #C7C7C7;
+	background-color: #fff;
+	border-radius: 50px;
+	display: flex;
+	align-items: center;
+}.google-login p {
+	margin: 0;
+	padding-right: 7rem;
+	font-size: 16px;
+	font-weight: 500;
+}

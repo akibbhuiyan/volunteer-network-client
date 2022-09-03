@@ -1,0 +1,24 @@
+.task {
+	display: flex;
+	gap: 26px;
+	box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.05);
+	position: relative;
+	padding: 11px;
+}
+.task img {
+	width: 158px;
+}
+.info h4 {
+	font-weight: 900;
+}.info p {
+	font-size: 18px;
+	font-weight: 600;
+}
+.cencel-btn {
+	position: absolute;
+	bottom: 13px;
+	right: 14px;
+	border: none;
+	border-radius: 4px;
+	padding: 5px 22px;
+}

@@ -1,0 +1,54 @@
+img{
+    width: 100%;
+}
+.top-section{
+    background-image: url(../../images/image\ 1.png);
+}
+.top-section {
+    background-image: url(../../images/image\ 1.png);
+	background-size: cover;
+	text-align: center;
+}
+.bg-color {
+	background-color: rgba(255, 255, 255, 0.9);
+}.navbar-expand .navbar-nav {
+	align-items: center;
+}
+.nav-link {
+	color: #000 !important;
+	margin-right: 23px;
+}
+
+.nav-link:hover {
+	color: #604e4e !important;
+}
+.hero-section {
+	padding-top: 46px;
+}.hero-section h3 {
+	font-size: 36px;
+	font-weight: 700;
+	text-transform: uppercase;
+	margin: 50px;
+}.hero-section input {
+	background: #FBFBFB;
+	border: 1px solid #D6D6D6;
+	padding: 12px 17px;
+	width: 470px;
+	border-radius: 8px 0 0 8px;
+}.hero-section button {
+	background: #3F90FC;
+	border-radius: 0px 8px 8px 0px;
+	padding: 13px 17px;
+	border: none;
+	color: #fff;
+	margin-bottom: 50px;
+}
+.activity p {
+	padding: 16px 0;
+	background-color: #FFBD3E;
+	border-radius: 0px 0px 10px 10px;
+	text-align: center;
+	margin-top: -8px;
+	font-size: 20px;
+	color: #fff;
+}

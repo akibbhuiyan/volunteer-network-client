@@ -1,24 +1,32 @@
-import logo from './logo.svg';
+import { createContext, useState } from 'react';
 import './App.css';
+import { Routes, Route } from "react-router-dom";
+import Home from './component/Home/Home';
+import VolunteerAccount from './component/volunteerAccount/VolunteerAccount';
+import Login from './component/Login/Login';
+import PrivateRoute from './component/PrivateRoute/PrivateRoute';
+import EventTask from './component/EventTask/EventTask';
+import Admin from './component/Admin/Admin';
+import AddEvent from './component/AddEvent/AddEvent';
 
+
+export const UserContext = createContext()
 function App() {
+  const [loggedInUser, setLoggedInUser] = useState({})
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
+      <p>{loggedInUser.email}</p>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/home' element={<Home />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/admin' element={<Admin />} />
+        <Route path='/admin/addEvent' element={<AddEvent />} />
+        <Route path='/eventTask' element={<PrivateRoute><EventTask /></PrivateRoute>} />
+        <Route path='/volunteeraccount/:id' element={<PrivateRoute><VolunteerAccount /></PrivateRoute>} />
+
+      </Routes>
+    </UserContext.Provider>
   );
 }
 
