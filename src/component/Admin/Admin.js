@@ -12,11 +12,16 @@ const Admin = () => {
             .then(res => res.json())
             .then(data => setUserInfo(data))
     }, [])
-    console.log(userInfo)
+    const handleDelete = (user) => {
+        console.log(user._id);
+        fetch(`https://tranquil-bastion-15510.herokuapp.com/admintask/delete?delete=${user._id}`)
+            .then(res => res.json())
+            .then(data => console.log(data))
+    }
     return (
         <div className='admin-container row'>
             <div className="col-3 col-sm-3 col-md-3 ps-5">
-                <img src={logo} alt="LOGO" className='logo' />
+                <Link to='/'><img src={logo} alt="LOGO" className='logo' /></Link>
                 <div className="event">
                     <h4 className='active'><FiUsers />Volunteer register list</h4>
                     <Link to='/admin/addEvent'><AiOutlinePlus />Add Event</Link>
@@ -40,12 +45,12 @@ const Admin = () => {
                             </thead>
                             <tbody>
                                 {
-                                    userInfo.map(user => <tr>
+                                    userInfo.map(user => <tr key={user.taskId}>
                                         <td>{user.fullName}</td>
                                         <td>{user.email}</td>
                                         <td>{user.date}</td>
                                         <td>{user.title}</td>
-                                        <td><FaTrashAlt /></td>
+                                        <td onClick={() => handleDelete(user)}><FaTrashAlt /></td>
                                     </tr>)
                                 }
                             </tbody>

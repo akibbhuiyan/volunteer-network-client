@@ -35,7 +35,7 @@ const AddEvent = () => {
     return (
         <div className='admin-container row'>
             <div className="col-3 col-sm-3 col-md-3 ps-5">
-                <img src={logo} alt="LOGO" className='logo' />
+                <Link to='/'><img src={logo} alt="LOGO" className='logo' /></Link>
                 <div className="event">
                     <h4><FiUsers />Volunteer register list</h4>
                     <Link to='/admin/addEvent' className='active'><AiOutlinePlus />Add Event</Link>

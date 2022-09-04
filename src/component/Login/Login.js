@@ -6,7 +6,7 @@ import logo from '../../Group 1329.png'
 import { FaGoogle } from "react-icons/fa";
 import './Login.css'
 import { UserContext } from '../../App';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 initializeApp(firebaseConfig)
 const Login = () => {
@@ -42,7 +42,7 @@ const Login = () => {
     }
     return (
         <div className='login-container'>
-            <img src={logo} alt="LOGO" className='logo' />
+            <Link to='/'><img src={logo} alt="LOGO" className='logo' /></Link>
             <div className="login">
                 <h3>Login with</h3>
                 <button className="google-login" onClick={handleGoogleSignIn}>

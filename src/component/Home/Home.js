@@ -4,13 +4,22 @@ import Header from '../Header/Header';
 
 import './Home.css'
 const Home = () => {
+
     const [volunteer, setVolunteer] = useState([])
+    const [filter, setFilter] = useState()
+
     useEffect(() => {
         fetch('https://tranquil-bastion-15510.herokuapp.com/activities')
             .then(res => res.json())
             .then(data => setVolunteer(data))
-    }, [])
-    // console.log(volunteer);
+
+    }, [filter])
+
+    const handleSearch = () => {
+        fetch(`https://tranquil-bastion-15510.herokuapp.com/tasks?search=${filter}`)
+            .then(res => res.json())
+            .then(data => setVolunteer(data))
+    }
     return (
         <>
             <div className="top-section">
@@ -18,8 +27,8 @@ const Home = () => {
                     <Header />
                     <div className="hero-section">
                         <h3>I grow by helping people in need.</h3>
-                        <input type="search" name="search" placeholder='Search...' />
-                        <button>Search</button>
+                        <input type="search" name="search" placeholder='Search...' onBlur={(e) => setFilter(e.target.value)} />
+                        <button onClick={handleSearch}>Search</button>
                     </div>
                 </div>
             </div>

@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import logo from '../../Group 1329.png'
 import './VolunteerAccount.css'
 import { useForm } from "react-hook-form";
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { UserContext } from '../../App';
 import { useNavigate } from "react-router-dom";
 
@@ -39,7 +39,7 @@ const VolunteerAccount = () => {
     };
     return (
         <div className='volunteer'>
-            <img src={logo} alt="LOGO" className='logo' />
+            <Link to='/'><img src={logo} alt="LOGO" className='logo' /></Link>
             <form onSubmit={handleSubmit(onSubmit)} className='volunteerForm'>
                 <h2>Register as a Volunteer</h2>
                 <input {...register("fullName", { required: true })} placeholder='Full Name' />
